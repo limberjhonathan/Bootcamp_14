@@ -189,14 +189,6 @@ O protótipo já mostra a visão completa do produto (14 telas). O MVP constrói
 
 ---
 
-## Regras de trabalho
-
-- A `main` é protegida: merge só por PR, com revisão de outro membro do POD e CI verde.
-- No máximo **2 PRs abertos** ao mesmo tempo.
-- Cada checkpoint recebe uma tag, de `checkpoint-01` a `checkpoint-06`, criada até 22h40 do encontro.
-- Toda funcionalidade nasce de uma história com critérios de aceite. Todo teste cita a história de origem (ex.: `// US-02`).
-- Em aula o POD trabalha em mob. Entre as aulas o trabalho segue assíncrono, via PRs.
-
 ## Checkpoints
 
 | # | Encontro | Entrega mínima | Status |
