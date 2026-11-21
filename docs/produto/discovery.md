@@ -11,6 +11,7 @@
 | 1. Proto-personas | Hipóteses do POD, a validar | ✅ Feito |
 | 2. Análise de concorrentes | Pesquisa secundária (desk research) | ✅ Feito |
 | 3. Entrevistas com usuários | Pesquisa primária | ⏳ Pendente |
+| 4. Protótipo Fundamenta como artefato de teste | Protótipo navegável (base do checkpoint 03) | ✅ Pronto para teste |
 
 ## 1. Proto-personas *(hipóteses, ainda não validadas)*
 
@@ -122,3 +123,34 @@
 
 ### Citações marcantes
 > "`[PREENCHER]`" (E?)
+
+## 4. O protótipo Fundamenta como artefato de discovery
+
+> Fonte: repositório [sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front), um beta visual com dados de exemplo construído pelo PO entre out e nov/2026. Ele **não é evidência de que os usuários querem o produto**: é o instrumento para testar isso com eles.
+
+### O que o protótipo já materializa
+
+| Hipótese | Onde aparece no protótipo | Premissa |
+|---|---|---|
+| Descrever em texto é suficiente para gerar o fluxo | *Novo com IA*: etapas Básico → Estratégia → Material → Revisão | P1 |
+| Documentos de apoio (POPs, manuais) melhoram a geração | *Novo com IA › Material*: upload de arquivos para a IA ler (adicionado em 16/11) | P1 |
+| O usuário revisa e ajusta, em vez de redesenhar | *Modelagem*: canvas BPMN (`bpmn-js`), paleta, painel de propriedades e alternativas | P2 |
+| Vincular responsáveis e sistemas dá valor ao fluxo | *Modelagem › Painel de propriedades* | P4 |
+| A IA aponta gargalos e trabalho manual | *Dashboard do gestor › Análise de gargalos*; sugestões de automação na Modelagem | P4 |
+
+### Achado de escopo
+
+O protótipo cobre a **visão completa** (14 telas, incluindo aprovações, portal, assistente, permissões e cotas de IA). Confrontado com as premissas de maior risco, ele mostra que **só 2 telas testam diretamente a hipótese central**: *Novo com IA* e *Modelagem*. Isso fundamentou o recorte do [MoSCoW](moscow.md): as demais telas ficam como *Won't (agora)*.
+
+### Limitação
+
+A IA ainda não está integrada ao protótipo (dados de exemplo). Por isso, P1 e P2 só podem ser testadas de verdade quando a geração estiver ligada, ou com um BPMN preparado antes, como prevê o roteiro (bloco 4).
+
+### Plano de teste com o protótipo *(checkpoint 03)*
+
+| Tarefa dada ao usuário | O que medir | Premissa |
+|---|---|---|
+| "Crie o processo de reembolso usando o *Novo com IA*" | Tempo, abandono, qualidade da descrição | P1 |
+| "Ajuste o fluxo gerado até ficar correto" | % de elementos mantidos; se tentou refazer do zero | P2 |
+| "Indique quem faz cada etapa e em qual sistema" | Conclusão sem ajuda | P4 |
+
