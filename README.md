@@ -38,7 +38,7 @@ O Fundamenta é uma plataforma de **gestão de processos (BPM) com inteligência
 
 | | |
 |---|---|
-| **Status** | `checkpoint-02` · Produto: conteúdo concluído, aguardando PR e tag |
+| **Status** | `checkpoint-02` · Produto ✅ concluído · próximo: protótipo testado com usuários (checkpoint 03) |
 | **URL do MVP** | *a definir (checkpoint 05)* |
 | **Protótipo (front-end)** | [sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front): Next.js 16, MUI e bpmn-js; beta visual com dados de exemplo |
 | **Hipótese de valor** | [docs/produto/hipotese.md](docs/produto/hipotese.md) |
@@ -194,7 +194,7 @@ O protótipo já mostra a visão completa do produto (14 telas). O MVP constrói
 | # | Encontro | Entrega mínima | Status |
 |---|---|---|---|
 | 01 | Times e desafio | POD e papéis, Lean Canvas, hipótese, esqueleto do PRD, AGENTS.md v0 | ✅ Concluído |
-| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | 🟢 Conteúdo pronto · PR e tag pendentes |
+| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | ✅ Concluído |
 | 03 | Protótipo | Telas testadas com 2 ou mais usuários, ADR do design system, diário #1 | ⚪ |
 | 04 | Design C1/C2 | C1 e C2 em LikeC4, ADRs, walking skeleton no ar com deploy e CI | ⚪ |
 | 05 | MVP | URL pública, fluxo principal ponta a ponta, testes e eval no CI, rastreabilidade, diário #2 | ⚪ |
