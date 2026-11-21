@@ -11,7 +11,7 @@ Entregar o pacote de produto do encontro 02 (slide 72 da Aula 01): **evidências
 | Entrega | Artefato | Status |
 |---|---|---|
 | AI Canvas | [ai-canvas.md](../produto/ai-canvas.md) | ✅ Feito no ciclo anterior, revisado sem mudanças |
-| MoSCoW do MVP | [moscow.md](../produto/moscow.md) | ✅ 7 Must, 4 Should, 4 Could, 9 Won't, com ordem de corte |
+| MoSCoW do MVP | [moscow.md](../produto/moscow.md) | ✅ 7 Must, 5 Should, 4 Could, 10 Won't, com ordem de corte |
 | Histórias + critérios de aceite | [historias-mvp.md](../specs/historias-mvp.md) | ✅ 10 histórias, 36 critérios Dado/Quando/Então |
 | PRD v1 | [prd.md](../produto/prd.md) | ✅ Requisitos rastreados até as histórias |
 | Evidências de discovery | [discovery.md](../produto/discovery.md) | ✅ Proto-personas, concorrentes, protótipo e 5 participantes (E1–E5); P3 e P4 validadas |
