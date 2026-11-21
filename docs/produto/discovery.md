@@ -2,7 +2,7 @@
 
 > Entrega do checkpoint 02. Objetivo: testar as **premissas de maior risco** da [hipótese de valor](hipotese.md) com pessoas reais, **antes** de construir.
 >
-> ⚠️ **Preencher com dados reais.** Tudo marcado com `[PREENCHER]` vem das entrevistas do POD. Não invente respostas: evidência fabricada invalida a hipótese.
+> **Transparência:** cada fonte está rotulada como real (🟢) ou simulada com IA (🧪). Só as fontes reais contam como validação.
 
 ## Status do discovery
 
@@ -10,7 +10,7 @@
 |---|---|---|
 | 1. Proto-personas | Hipóteses do POD, a validar | ✅ Feito |
 | 2. Análise de concorrentes | Pesquisa secundária (desk research) | ✅ Feito |
-| 3. Entrevistas com usuários | Pesquisa primária | ⏳ Pendente |
+| 3. Entrevistas com usuários | 1 conversa real (E1) + 3 simuladas com IA (S1–S3) | 🟡 Parcial: validação com usuários no checkpoint 03 |
 | 4. Protótipo Fundamenta como artefato de teste | Protótipo navegável (base do checkpoint 03) | ✅ Pronto para teste |
 
 ## 1. Proto-personas *(hipóteses, ainda não validadas)*
@@ -79,50 +79,80 @@
 
 ### Entrevistados
 
-> Meta: **pelo menos 5 entrevistas**, priorizando os primeiros adeptos (analistas de processos e profissionais de RPA). Não usar nomes completos sem autorização; use iniciais.
+> Duas fontes, separadas de propósito: **E1 é uma conversa real**, informal e reconstruída de memória. **S1 a S3 são entrevistas simuladas com IA**, com personas sintéticas construídas a partir das proto-personas e das regras de negócio do protótipo. As simulações **não são evidência de usuário real**: servem para afiar o roteiro e as perguntas do checkpoint 03.
 
-| # | Perfil | Empresa (porte/setor) | Ferramenta atual | Data | Entrevistador |
+| # | Tipo | Perfil | Empresa | Data | Entrevistadores |
 |---|---|---|---|---|---|
-| E1 | `[PREENCHER]` | `[PREENCHER]` | `[PREENCHER]` | `[PREENCHER]` | `[PREENCHER]` |
-| E2 | | | | | |
-| E3 | | | | | |
-| E4 | | | | | |
-| E5 | | | | | |
+| **E1** | 🟢 Real (conversa informal) | Gerente de projetos, setor de TI | Confidencial | Semana de 09/11/2026 | Limber Jhonathan e Vinicius Franco |
+| S1 | 🧪 Simulada (IA) | Analista de processos (persona Ana) | Fictícia: empresa de serviços, ~800 pessoas | 20/11/2026 | Claude Code |
+| S2 | 🧪 Simulada (IA) | Desenvolvedor de RPA (persona Rafael) | Fictícia: área de automação de um banco médio | 20/11/2026 | Claude Code |
+| S3 | 🧪 Simulada (IA) | Gestora de PME (persona Marta) | Fictícia: distribuidora com 40 pessoas | 20/11/2026 | Claude Code |
 
-### Registro por entrevista
+### E1: Gerente de projetos de TI *(conversa real)*
 
-#### E1: `[perfil]`
+> **Formato:** conversa informal, sem gravação nem roteiro estruturado. Registro feito pelo POD **de memória**. Os pontos que não foram abordados estão marcados como tal, em vez de preenchidos.
 
-- **Último processo mapeado:** `[PREENCHER]` · **tempo gasto:** `[PREENCHER]` · **ferramenta:** `[PREENCHER]`
-- **Maior dor (nas palavras dela/dele):** "`[PREENCHER]`"
-- **Como identifica automações hoje:** `[PREENCHER]`
-- **Teste da descrição:** levou `[__]` min · `[__]` etapas · citou sistemas? `[sim/não]`
-- **Reação ao BPMN gerado:** `[editaria / refaria / descartaria]` · o que estava errado: `[PREENCHER]`
-- **Barreiras para adotar:** `[PREENCHER]`
+- **O que ele disse (paráfrase do POD):**
+  - A área **tem processos que precisam ser mapeados**: existe uma demanda real e pendente de mapeamento.
+  - Para ajudar, **a IA precisa ter uma visão dos processos**, ou seja, entender o contexto e o conjunto dos processos, não só gerar um desenho isolado.
+- **Tempo para mapear / ferramenta atual:** não abordado.
+- **Teste da descrição (bloco 4 do roteiro):** não realizado.
 
-*(copiar o bloco para E2…E5)*
+**Leitura do POD:**
+- Reforça **P3** (a dor existe): há um passivo de processos a mapear.
+- Reforça a **proposta de valor da base conectada**: o valor esperado da IA não é só gerar BPMN, é *ter visão* do conjunto. Isso sustenta os vínculos (US-05), a análise (US-06) e a busca (US-07), e é um sinal a favor de subir a prioridade da busca e da pergunta sobre a base (RF08).
+- Não traz dado para **P1** nem para **P2**.
+
+### S1: Analista de processos *(simulada com IA)*
+
+- **Último processo mapeado:** onboarding de fornecedores, com 4 entrevistas com as áreas e cerca de 2 dias até o fluxo aprovado, no Bizagi.
+- **Maior dor:** "Desenhar é rápido. O que demora é transformar as anotações das entrevistas em fluxo e depois manter atualizado."
+- **Automação hoje:** levantada caso a caso, quando alguém reclama.
+- **Reação a um BPMN gerado:** editaria, desde que dê para corrigir o fluxo com facilidade e a IA não invente etapas.
+- **Barreira:** confidencialidade, porque não colaria documentos internos numa IA sem garantia sobre os dados.
+
+### S2: Desenvolvedor de RPA *(simulada com IA)*
+
+- **Contexto:** recebe pedidos de "robotizar" sem processo documentado e passa a primeira semana descobrindo o fluxo real.
+- **Maior dor:** "Ninguém sabe dizer em qual sistema cada etapa acontece."
+- **Reação:** a lista de atividades manuais com sistema e responsável é o que mais interessa; o diagrama vem depois.
+- **Barreira:** desconfia de sugestões de automação sem justificativa.
+
+### S3: Gestora de PME *(simulada com IA)*
+
+- **Contexto:** os processos ficam na cabeça de duas pessoas-chave.
+- **Maior dor:** "Quando alguém sai, o processo vai junto."
+- **Reação:** não sabe o que é BPMN; quer descrever do jeito dela e ver um passo a passo.
+- **Barreira:** preço e tempo para aprender a ferramenta.
 
 ## Síntese
 
-| Premissa | E1 | E2 | E3 | E4 | E5 | Resultado |
-|---|---|---|---|---|---|---|
-| P1 descrição suficiente | | | | | | `[validada / invalidada / inconclusiva]` |
-| P2 edita em vez de refazer | | | | | | |
-| P3 mapeamento lento e doloroso | | | | | | |
-| P4 achar automação é difícil | | | | | | |
+| Premissa | E1 (real) | S1–S3 (simuladas) | Resultado |
+|---|---|---|---|
+| P1 descrição suficiente | Não abordado | Sinal positivo | ⚪ **Inconclusiva**: testar no checkpoint 03 com o protótipo |
+| P2 edita em vez de refazer | Não abordado | Sinal positivo, com ressalva de "não inventar etapas" | ⚪ **Inconclusiva** |
+| P3 mapeamento é uma dor real | ✅ Há processos pendentes de mapeamento | Sinal positivo | 🟢 **Indício real** (1 fonte) |
+| P4 achar automação é difícil | Não abordado | Sinal positivo (S2) | ⚪ **Inconclusiva** |
 
-**Tempo médio relatado para mapear um processo hoje:** `[PREENCHER]` → usado para calibrar a meta de "≤ 50% do tempo" do [PRD](prd.md#6-métricas-de-sucesso).
+**Tempo médio para mapear um processo hoje:** sem dado real. A meta "≤ 50% do tempo" do [PRD](prd.md#6-métricas-de-sucesso) continua como hipótese.
 
 ### Padrões encontrados
-- `[PREENCHER]`
+- **Visão do conjunto > diagrama isolado.** A fala real do E1 ("a IA precisa ter uma visão dos processos") é a evidência mais forte do ciclo e aponta para o diferencial da base conectada, não só para a geração de BPMN.
+- **Confiança e confidencialidade** aparecem como barreira nas simulações. Isso já está mitigado no [AI Canvas](ai-canvas.md) e precisa ser perguntado a usuários reais.
 
-### Surpresas e o que mudou no produto
-| Descoberta | Mudança no PRD / MoSCoW |
+### O que mudou no produto
+| Descoberta | Mudança |
 |---|---|
-| `[PREENCHER]` | `[PREENCHER]` |
+| E1: a IA precisa de visão do conjunto dos processos | Vínculos (US-05) e análise (US-06) seguem como Must; **busca (US-07) é a primeira candidata a subir** se houver folga |
+| Simulações: medo de a IA inventar etapas | Mantidos os critérios US-02 #1 e US-06 #5 e a métrica "etapas inventadas = 0" no eval |
 
-### Citações marcantes
-> "`[PREENCHER]`" (E?)
+### Citações
+> "Temos processos que precisamos mapear, e a IA precisa ter uma visão dos processos." *(E1, gerente de projetos de TI, paráfrase do POD a partir de conversa informal)*
+
+### Próximos passos (checkpoint 03)
+- [ ] Retomar a conversa com o E1 usando o roteiro curto (tempo, ferramenta, teste da descrição)
+- [ ] Testar o protótipo com pelo menos 2 usuários reais, conforme a seção 4
+- [ ] Substituir as simulações S1–S3 por entrevistas reais
 
 ## 4. O protótipo Fundamenta como artefato de discovery
 
