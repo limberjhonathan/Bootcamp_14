@@ -2,16 +2,16 @@
 
 **Sua organização, potencializada por IA.**
 
-> Plataforma de **gestão de processos (BPM) com inteligência artificial**. O Fundamenta ajuda empresas a mapear, documentar, aprovar e consultar seus processos em um só lugar, com uma IA que cria o fluxo BPMN a partir de uma descrição em texto, aponta trabalho manual e gargalos e responde dúvidas dos colaboradores.
+O Fundamenta é uma plataforma de **gestão de processos (BPM) com inteligência artificial**. A pessoa descreve um processo em texto livre e a IA gera o fluxo em BPMN 2.0. Depois, a pessoa revisa o fluxo, liga cada atividade a um responsável e a um sistema, e a IA aponta onde está o trabalho manual e o que vale automatizar.
 
-Projeto do **Bootcamp · Software Engineering Project** do MBA em Engenharia de Software da Faculdade Impacta. O projeto é desenvolvido com o método **AI-DLC**: o agente escreve o código, e o POD especifica, revisa e responde por ele.
+> Projeto do **Bootcamp · Software Engineering Project**, MBA em Engenharia de Software da Faculdade Impacta. Desenvolvido com o método **AI-DLC**: o agente escreve o código, e o POD especifica, revisa e responde por ele.
 
 | | |
 |---|---|
+| **Status** | `checkpoint-02` · Produto: conteúdo concluído, aguardando PR e tag |
 | **URL do MVP** | *a definir (checkpoint 05)* |
-| **Checkpoint atual** | `checkpoint-02` · Produto 🟡 em andamento |
+| **Protótipo (front-end)** | [sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front): Next.js 16, MUI e bpmn-js; beta visual com dados de exemplo |
 | **Hipótese de valor** | [docs/produto/hipotese.md](docs/produto/hipotese.md) |
-| **Front-end (protótipo)** | [limberjhonathan/sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front) · Next.js 16 + MUI + bpmn-js, beta visual com dados de exemplo |
 
 ---
 
@@ -29,92 +29,126 @@ Todos operam agentes e revisam PRs. O papel define quem responde por cada artefa
 
 ## O problema
 
-Empresas documentam seus processos de forma fragmentada, em documentos, planilhas, apresentações e ferramentas BPMN diferentes. As três principais dores:
+Nas empresas, os processos vivem espalhados em e-mails, mensagens, planilhas e documentos soltos, ou só na cabeça de quem executa. As três dores principais:
 
-1. **O mapeamento depende de especialistas em BPMN.** Criar e manter fluxos é lento e difícil para quem não domina a notação.
-2. **O processo desenhado vira documentação parada.** Não há conexão entre processo, pessoas, sistemas, documentos, riscos, indicadores e automações.
-3. **A documentação se afasta da realidade.** O processo muda e o documento não acompanha. Encontrar gargalos, tarefas manuais e oportunidades de automação exige análise manual.
+1. **Mapear depende de especialista.** Desenhar e manter um fluxo BPMN é lento e exige domínio da notação.
+2. **Ninguém sabe quem faz o quê.** O processo não está ligado a responsáveis nem a sistemas, então as etapas se perdem e as tarefas são esquecidas.
+3. **O trabalho manual fica invisível.** Achar retrabalho, gargalos e o que vale automatizar exige análise manual, que quase nunca acontece.
 
-**Alternativas atuais:** Camunda Modeler, Bizagi, SAP Signavio, Bpanda, Visio, Lucidchart, Miro, Draw.io, planilhas e documentos.
+### O que o discovery mostrou
+
+Conversamos com **5 profissionais** (gerente de projetos de TI e 4 funcionários de áreas operacionais) sobre processos reais: compras, reembolso, integração de novos colaboradores e suporte interno. Os detalhes estão em [discovery.md](docs/produto/discovery.md).
+
+| Achado | Quem relatou |
+|---|---|
+| A falta de processo mapeado é uma dor real | **5 de 5** |
+| Trabalho manual e retrabalho difíceis de enxergar | **4 de 5** |
+| Responsável indefinido em cada etapa | E2, E4, E5 |
+| Falta de visão geral do processo | E1, E4 |
+
+> "Algumas tarefas acabam esquecidas ou atrasadas porque não existe uma visão geral do processo." (analista de recursos internos)
+
+**Alternativas atuais:** Bizagi, Camunda Modeler, SAP Signavio, Visio, Lucidchart, Miro, Draw.io, planilhas e documentos. Elas são *poderosas, mas difíceis* (BPMN completo, feito para especialistas) ou *fáceis, mas sem inteligência* (desenham, mas não entendem o processo).
+
+---
 
 ## A solução
 
-Centralizar o ciclo de vida dos processos, da criação à consulta, e usar IA para acelerar o trabalho:
+O Fundamenta fica no espaço entre esses dois grupos: **fácil de criar** (basta descrever) e **inteligente depois** (a IA entende o processo e o contexto).
 
-- **Criar** processos descrevendo-os em linguagem natural: a IA estrutura o fluxo em BPMN 2.0, identificando papéis (RACI) e entradas/saídas (SIPOC).
-- **Modelar e revisar** os fluxos em um editor visual, com responsáveis, sistemas, documentação e sugestões de automação e de conformidade.
-- **Aprovar** mudanças em uma fila com prioridade e histórico.
-- **Consultar** tudo pelo portal de conhecimento, pela busca ou perguntando ao assistente, que cita as fontes.
-- **Acompanhar** indicadores de eficiência, conformidade e uso, com a IA apontando gargalos e processos desatualizados.
+| Etapa | O que acontece |
+|---|---|
+| **1. Descrever** | A pessoa conta como o processo funciona, em texto livre, e pode anexar materiais de apoio |
+| **2. Gerar** | A IA cria o fluxo em BPMN 2.0, com início, atividades, decisões e fim |
+| **3. Revisar** | O fluxo abre no editor visual para ajustes; o que foi gerado pela IA fica sinalizado até ser revisado |
+| **4. Conectar** | Cada atividade recebe responsável e sistema; a IA sugere os vínculos e a pessoa aprova ou rejeita cada um |
+| **5. Analisar** | A IA aponta atividades manuais e sugere automações, sempre com justificativa |
+
+### Por que a IA não é enfeite
+
+Sem a IA, o Fundamenta vira mais um editor BPMN, que é justamente a alternativa que já existe. O valor depende da IA para **transformar texto não estruturado em processo estruturado** e para **analisar o processo com o contexto da organização** (pessoas, sistemas, atividades manuais). O humano sempre revisa o que a IA gera. Estratégia, dados, métricas e riscos estão no [AI Canvas](docs/produto/ai-canvas.md).
 
 ### Para quem
 
-| Perfil | O que faz no Fundamenta |
+| Perfil | Necessidade |
 |---|---|
-| **Gestor / analista de processos** *(primeiro adepto)* | Mapeia processos com IA, acompanha KPIs, aprova alterações e identifica gargalos |
-| **Colaborador** | Encontra procedimentos, tira dúvidas com o assistente e cumpre suas atividades |
-| **Administrador** | Gerencia usuários, departamentos, permissões e o consumo de IA |
-
-### Visão do produto × recorte do MVP
-
-O protótipo do front já mostra a visão completa (dashboard, processos, Novo com IA, modelagem, aprovações, portal, assistente, busca e administração). O **MVP do bootcamp** entrega só o fluxo principal, priorizado no [MoSCoW](docs/produto/moscow.md):
-
-> **Descrever processo → IA gera BPMN → usuário revisa e ajusta → vincula responsáveis e sistemas → IA aponta trabalho manual e automações.**
-
-Aprovações, portal, assistente (chat), macroprocessos, permissões e cotas de IA ficam para depois do MVP.
-
-### Onde a IA entra (e por que não é enfeite)
-
-Tire a IA e o Fundamenta vira mais um editor BPMN, que é exatamente a alternativa que já existe. A proposta de valor depende da IA para **transformar informação não estruturada em processo estruturado** e para **analisar os processos usando o contexto da organização**. A IA aparece **dentro do fluxo** (gera e sugere o diagrama no editor) e como **conversa** para perguntas abertas sobre a base de processos.
-
-A justificativa detalhada fica no [AI Canvas](docs/produto/ai-canvas.md).
+| **Analista / gestor de processos** *(primeiro adepto)* | Ter um rascunho confiável do fluxo em minutos, em vez de desenhar do zero |
+| **Profissional de RPA e automação** | Saber quais atividades são manuais e em quais sistemas acontecem |
+| **Gestor de PME** | Documentar processos sem precisar aprender BPMN |
 
 ---
+
+## Escopo do MVP
+
+O MVP entrega **um fluxo completo, ponta a ponta**, e não uma fatia de cada módulo:
+
+> **Descrever processo → IA gera BPMN → revisar e ajustar → vincular responsáveis e sistemas → IA aponta trabalho manual e automações**
+
+| Prioridade | Itens |
+|---|---|
+| **Must** | Login com isolamento por organização · gerar BPMN com IA · editar e salvar · cadastrar pessoas e sistemas · vincular com sugestão da IA · análise de trabalho manual |
+| **Should** | Busca por processo, atividade ou sistema · destaque de atividades sem responsável · exportar BPMN · selo "gerado por IA" · medir o tempo de documentação |
+| **Fora do MVP** | Aprovações, portal, assistente (chat), dashboards, administração, acompanhamento da execução, riscos, KPIs e integrações |
+
+O protótipo já mostra a visão completa do produto (14 telas). O MVP constrói só o que testa a hipótese central. Priorização completa em [moscow.md](docs/produto/moscow.md) e histórias em [historias-mvp.md](docs/specs/historias-mvp.md).
+
+### Como saberemos que funciona
+
+| Métrica | Meta inicial *(hipótese)* |
+|---|---|
+| Tempo para documentar um processo, comparado à ferramenta atual | ≤ 50% |
+| Elementos do BPMN gerado mantidos pelo usuário | ≥ 70% |
+| Taxa de acerto do eval da IA | ≥ 17 de 20 casos |
+| Oportunidades de automação consideradas reais | ≥ 1 por processo |
+
+---
+
+## Artefatos de produto
+
+| Artefato | Conteúdo |
+|---|---|
+| [Lean Canvas](docs/produto/lean-canvas.md) | Problema, segmentos, proposta de valor e modelo de negócio |
+| [Hipótese de valor](docs/produto/hipotese.md) | "Acreditamos que..." e premissas de maior risco |
+| [Discovery](docs/produto/discovery.md) | Proto-personas, concorrentes, 5 relatos de usuários e síntese |
+| [AI Canvas](docs/produto/ai-canvas.md) | Por que IA, dados, métricas, plano de eval e riscos |
+| [MoSCoW](docs/produto/moscow.md) | Priorização do MVP e ordem de corte |
+| [PRD v1](docs/produto/prd.md) | Visão, público, requisitos, RNFs, critérios de aceite e métricas |
+| [Histórias](docs/specs/historias-mvp.md) | US-01 a US-10, com 36 critérios Dado/Quando/Então |
+| [Diário agêntico](docs/diario/) | O que o agente fez, onde errou e onde o POD interveio |
 
 ## Estrutura do repositório
 
 | Caminho | Conteúdo |
 |---|---|
-| [`/README.md`](README.md) | Startup, POD, papéis e URL do MVP |
-| [`/AGENTS.md`](AGENTS.md) | Harness do agente: regras, stack e limites |
-| [`/docs/produto/`](docs/produto/) | Lean Canvas, hipótese, AI Canvas, PRD e evidências de discovery |
-| [`/docs/specs/`](docs/specs/) | Histórias de usuário e critérios de aceite (Dado/Quando/Então) |
-| [`/docs/adr/`](docs/adr/) | Decisões de arquitetura (ADRs) |
+| [`/AGENTS.md`](AGENTS.md) | Harness do agente: método, regras, limites e stack |
+| [`/docs/produto/`](docs/produto/) | Artefatos de produto |
+| [`/docs/specs/`](docs/specs/) | Histórias e critérios de aceite |
+| [`/docs/adr/`](docs/adr/) | Decisões de arquitetura |
 | [`/docs/diario/`](docs/diario/) | Diário agêntico, um arquivo por checkpoint |
-| [`/docs/pitch/`](docs/pitch/) | `pitch.md` (fonte), `pitch.pdf` e roteiro da demo |
+| [`/docs/pitch/`](docs/pitch/) | Material do pitch e roteiro da demo |
 | [`/architecture/`](architecture/) | Modelo LikeC4 (C1 e C2) |
-| [`/prototype/`](prototype/) | Telas HTML do protótipo |
+| [`/prototype/`](prototype/) | Telas do protótipo |
 | [`/evals/`](evals/) | Casos de avaliação da IA e script da taxa de acerto |
 | [`/src/`](src/) | Código do MVP |
 | [`/.github/`](.github/) | CI com testes e eval |
-
-## Artefatos de produto
-
-- [Lean Canvas](docs/produto/lean-canvas.md)
-- [Hipótese de valor](docs/produto/hipotese.md)
-- [PRD v1](docs/produto/prd.md)
-- [AI Canvas](docs/produto/ai-canvas.md)
-- [MoSCoW do MVP](docs/produto/moscow.md)
-- [Evidências de discovery](docs/produto/discovery.md)
-- [Histórias e critérios de aceite](docs/specs/historias-mvp.md)
 
 ---
 
 ## Regras de trabalho
 
-- A `main` é protegida: o merge só entra por PR, com revisão de outro membro do POD e CI verde.
+- A `main` é protegida: merge só por PR, com revisão de outro membro do POD e CI verde.
 - No máximo **2 PRs abertos** ao mesmo tempo.
 - Cada checkpoint recebe uma tag, de `checkpoint-01` a `checkpoint-06`, criada até 22h40 do encontro.
-- O diário agêntico é versionado, com um arquivo por checkpoint em `/docs/diario/`.
+- Toda funcionalidade nasce de uma história com critérios de aceite. Todo teste cita a história de origem (ex.: `// US-02`).
 - Em aula o POD trabalha em mob. Entre as aulas o trabalho segue assíncrono, via PRs.
 
 ## Checkpoints
 
 | # | Encontro | Entrega mínima | Status |
 |---|---|---|---|
-| 01 | Times e desafio | POD e papéis no README, Lean Canvas, hipótese, esqueleto do PRD, AGENTS.md v0 | ✅ concluído |
-| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | 🟡 |
-| 03 | Protótipo | Telas HTML testadas com 2 ou mais usuários, ADR do design system, diário #1 | ⚪ |
+| 01 | Times e desafio | POD e papéis, Lean Canvas, hipótese, esqueleto do PRD, AGENTS.md v0 | ✅ Concluído |
+| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | 🟢 Conteúdo pronto · PR e tag pendentes |
+| 03 | Protótipo | Telas testadas com 2 ou mais usuários, ADR do design system, diário #1 | ⚪ |
 | 04 | Design C1/C2 | C1 e C2 em LikeC4, ADRs, walking skeleton no ar com deploy e CI | ⚪ |
 | 05 | MVP | URL pública, fluxo principal ponta a ponta, testes e eval no CI, rastreabilidade, diário #2 | ⚪ |
 | 06 | Pitch | Pitch ao vivo com demo e material em `/docs/pitch/` | ⚪ |
