@@ -14,7 +14,7 @@ Entregar o pacote de produto do encontro 02 (slide 72 da Aula 01): **evidências
 | MoSCoW do MVP | [moscow.md](../produto/moscow.md) | ✅ 7 Must, 4 Should, 4 Could, 9 Won't, com ordem de corte |
 | Histórias + critérios de aceite | [historias-mvp.md](../specs/historias-mvp.md) | ✅ 10 histórias, 36 critérios Dado/Quando/Então |
 | PRD v1 | [prd.md](../produto/prd.md) | ✅ Requisitos rastreados até as histórias |
-| Evidências de discovery | [discovery.md](../produto/discovery.md) | 🟡 Proto-personas, concorrentes, protótipo e 1 conversa com usuário (E1) |
+| Evidências de discovery | [discovery.md](../produto/discovery.md) | ✅ Proto-personas, concorrentes, protótipo e 5 participantes (E1–E5); P3 e P4 validadas |
 | Harness | [AGENTS.md](../../AGENTS.md) v0 → v1 | ✅ 5 regras novas, vindas dos erros abaixo |
 
 ## O que o agente fez
@@ -42,7 +42,7 @@ Entregar o pacote de produto do encontro 02 (slide 72 da Aula 01): **evidências
 - **Corrigiu o produto:** informou que o projeto é o Fundamenta e apontou o repositório do front.
 - **Pegou uma afirmação falsa no diário** (erro #1). É o tipo de revisão humana que o AI-DLC exige.
 - **Cobrou qualidade:** pediu que o diário tivesse nível sênior, o que levou a transformar os erros em regras do harness.
-- **Discovery:** o POD trouxe uma conversa real com um gerente de projetos de TI (E1): "temos processos que precisamos mapear, e a IA precisa ter uma visão dos processos". O agente registrou a conversa como paráfrase de memória, sem completar com dados que não foram ditos.
+- **Discovery:** o POD conversou com um gerente de projetos de TI (E1) e coletou relatos de 4 funcionários (E2–E5) sobre compras, reembolso, onboarding e suporte. O agente organizou os relatos sem acrescentar dados, sintetizou os padrões e propôs os ajustes no MoSCoW (S5 e o item de execução no Won't).
 
 ## Decisões tomadas
 

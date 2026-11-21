@@ -26,6 +26,7 @@
 | S2 | Exportar o processo em BPMN/XML compatível com o Camunda Modeler | US-08 | RF06 |
 | S3 | Marcar visualmente o conteúdo gerado por IA até o usuário revisá-lo | US-09 | RNF / risco "confiança excessiva" |
 | S4 | Instrumentar o tempo para documentar um processo (métrica principal) | US-10 | Métricas |
+| S5 | Destacar atividades e processos **sem responsável** *(vem do discovery: E2, E4, E5)* | US-07 (filtro) | RF05 |
 
 ## Could have: desejável, só se sobrar tempo
 
@@ -44,6 +45,7 @@
 | Upload de documentos e RAG | Depende do fluxo principal validado |
 | Riscos e controles | Módulo independente, não faz parte do fluxo principal |
 | KPIs e indicadores por processo | Idem |
+| Acompanhamento da execução (status de cada solicitação, pendências) | Dor real no discovery (E2, E3, E5), mas é workflow, não mapeamento. Hipótese pós-MVP |
 | Comparação AS-IS × TO-BE e versionamento | Exige histórico de versões |
 | Aprovação e publicação de processos | Governança é valor Enterprise |
 | Catálogo de automações | Depende da análise (M6) estar validada |
@@ -52,4 +54,4 @@
 
 ## Critério de corte
 
-Se o prazo apertar, cortar nesta ordem: **Could → S4 → S3 → S2 → S1**. Nenhum Must é cortado; se um Must estiver em risco, o POD reduz o escopo **dentro** dele (ex.: M4 com cadastro mínimo de nome, sem hierarquia de áreas).
+Se o prazo apertar, cortar nesta ordem: **Could → S4 → S3 → S2 → S5 → S1**. Nenhum Must é cortado; se um Must estiver em risco, o POD reduz o escopo **dentro** dele (ex.: M4 com cadastro mínimo de nome, sem hierarquia de áreas).

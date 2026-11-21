@@ -10,7 +10,7 @@
 |---|---|---|
 | 1. Proto-personas | Hipóteses do POD, a validar | ✅ Feito |
 | 2. Análise de concorrentes | Pesquisa secundária (desk research) | ✅ Feito |
-| 3. Entrevistas com usuários | Pesquisa primária: 1 conversa (E1) | 🟡 Parcial: mais entrevistas no checkpoint 03 |
+| 3. Entrevistas com usuários | Pesquisa primária: 5 participantes (E1–E5) | ✅ Feito: P3 e P4 validadas; P1 e P2 vão para o teste do protótipo |
 | 4. Protótipo Fundamenta como artefato de teste | Protótipo navegável (base do checkpoint 03) | ✅ Pronto para teste |
 
 ## 1. Proto-personas *(hipóteses, ainda não validadas)*
@@ -82,6 +82,12 @@
 | # | Perfil | Empresa | Data | Formato | Entrevistadores |
 |---|---|---|---|---|---|
 | **E1** | Gerente de projetos, setor de TI | Confidencial | Semana de 09/11/2026 | Conversa informal | POD |
+| **E2** | Analista administrativo | Confidencial | Nov/2026 | Relato coletado pelo POD | POD |
+| **E3** | Assistente operacional | Confidencial | Nov/2026 | Relato coletado pelo POD | POD |
+| **E4** | Analista de recursos internos | Confidencial | Nov/2026 | Relato coletado pelo POD | POD |
+| **E5** | Analista de suporte interno | Confidencial | Nov/2026 | Relato coletado pelo POD | POD |
+
+> Nomes e setores omitidos a pedido, para não expor os participantes.
 
 ### E1: Gerente de projetos de TI
 
@@ -98,33 +104,80 @@
 - Reforça a **proposta de valor da base conectada**: o valor esperado da IA não é só gerar BPMN, é *ter visão* do conjunto. Isso sustenta os vínculos (US-05), a análise (US-06) e a busca (US-07), e é um sinal a favor de subir a prioridade da busca e da pergunta sobre a base (RF08).
 - Não traz dado para **P1** nem para **P2**.
 
+### E2: Analista administrativo · *solicitação de compras*
+
+- **Como funciona hoje:** o pedido chega por e-mail ou mensagem; um responsável verifica a necessidade e encaminha para aprovação da gestão.
+- **Dificuldades relatadas:** demora na aprovação; falta de acompanhamento das etapas; informações espalhadas entre e-mails e planilhas; retrabalho para localizar solicitações antigas.
+- **Ponto-chave:** "nem sempre é possível identificar quem está responsável por cada etapa"; não há visão centralizada de pedidos aprovados, recusados ou pendentes.
+
+### E3: Assistente operacional · *reembolso de despesas*
+
+- **Como funciona hoje:** o funcionário preenche uma planilha e envia os comprovantes; um responsável confere manualmente e encaminha para aprovação; se houver erro, a solicitação volta para correção.
+- **Dificuldades relatadas:** conferência manual de comprovantes; erros de preenchimento; reenvio para correção; falta de visibilidade do andamento.
+- **Ponto-chave:** os funcionários precisam entrar em contato para descobrir em que etapa está o reembolso.
+
+### E4: Analista de recursos internos · *integração de novos colaboradores*
+
+- **Como funciona hoje:** várias pessoas executam atividades (documentos, cadastro, acessos, equipamentos), acompanhadas por mensagens e planilhas.
+- **Dificuldades relatadas:** falta de padronização; dependência de comunicação manual; atrasos na liberação de acessos; dificuldade para acompanhar pendências.
+- **Ponto-chave:** tarefas são esquecidas "porque não existe uma visão geral do processo"; há colaborador que começa sem todos os acessos.
+
+### E5: Analista de suporte interno · *atendimento de solicitações de suporte*
+
+- **Como funciona hoje:** os pedidos chegam por e-mail, mensagem ou contato direto; alguém registra manualmente, define a prioridade e encaminha.
+- **Dificuldades relatadas:** vários canais de entrada; distribuição manual; falta de definição de responsáveis; dificuldade para identificar gargalos; ausência de indicadores.
+- **Ponto-chave:** não há análise centralizada para saber quais problemas são mais frequentes e "quais atividades poderiam ser automatizadas".
+
 ## Síntese
 
-| Premissa | E1 | Resultado |
-|---|---|---|
-| P1 descrição suficiente | Não abordado | ⚪ **Inconclusiva**: testar no checkpoint 03 com o protótipo |
-| P2 edita em vez de refazer | Não abordado | ⚪ **Inconclusiva** |
-| P3 mapeamento é uma dor real | ✅ Há processos pendentes de mapeamento | 🟢 **Indício real** (1 fonte) |
-| P4 achar automação é difícil | Não abordado | ⚪ **Inconclusiva** |
+| Premissa | E1 | E2 | E3 | E4 | E5 | Resultado |
+|---|---|---|---|---|---|---|
+| P1 descrição suficiente | — | ◐ | ◐ | ◐ | ◐ | ⚪ **Inconclusiva.** Todos descreveram o próprio processo em texto, com etapas, responsáveis e ferramentas, o que sugere viabilidade, mas a IA ainda não foi testada com esses textos |
+| P2 edita em vez de refazer | — | — | — | — | — | ⚪ **Inconclusiva:** testar com o protótipo no checkpoint 03 |
+| P3 a falta de processo mapeado é uma dor real | ✅ | ✅ | ✅ | ✅ | ✅ | 🟢 **Validada** (5 de 5) |
+| P4 achar trabalho manual e automação é difícil | — | ✅ | ✅ | ✅ | ✅ | 🟢 **Validada** (4 de 5) |
 
-**Tempo médio para mapear um processo hoje:** sem dado real. A meta "≤ 50% do tempo" do [PRD](prd.md#6-métricas-de-sucesso) continua como hipótese.
+✅ confirma · ◐ sinal indireto · — não abordado
+
+**Tempo médio para mapear um processo hoje:** não foi medido em nenhum relato. A meta "≤ 50% do tempo" do [PRD](prd.md#6-métricas-de-sucesso) continua como hipótese.
 
 ### Padrões encontrados
-- **Visão do conjunto > diagrama isolado.** A fala real do E1 ("a IA precisa ter uma visão dos processos") é a evidência mais forte do ciclo e aponta para o diferencial da base conectada, não só para a geração de BPMN.
-- **Confiança e confidencialidade** são riscos previstos no [AI Canvas](ai-canvas.md) que ainda precisam ser perguntados a usuários.
+
+1. **Ninguém sabe quem é o responsável por cada etapa** (E2, E4, E5). É a dor mais repetida e é exatamente o que o vínculo atividade → responsável (US-05) resolve.
+2. **Falta visão geral do processo** (E1, E2, E4). O gestor falou em "a IA precisa ter uma visão dos processos" e o E4 disse "não existe uma visão geral do processo". As duas falas sustentam o diferencial da base conectada.
+3. **Processo vivendo em e-mail, mensagem e planilha** (E2, E3, E4, E5). Confirma o problema do Lean Canvas: documentação fragmentada.
+4. **Trabalho manual e retrabalho** (E2, E3, E5): conferência manual, encaminhamento manual, reenvio para correção. São candidatos diretos à análise de automação (US-06).
+
+### Surpresa: parte da dor é de **execução**, não de documentação
+
+E2, E3 e E5 querem **acompanhar em que etapa está cada solicitação** (status, pendências, indicadores). Isso é execução e monitoramento do processo (workflow), não mapeamento. O MVP não cobre isso, e o POD decidiu **não ampliar o escopo agora**:
+
+- O MVP resolve a **causa** relatada: o processo não está definido nem tem responsáveis claros (padrões 1 e 2).
+- O acompanhamento de execução vira **hipótese para depois do MVP**. O protótipo já tem telas próximas (Aprovações e indicadores do Dashboard).
+- Risco anotado: se nas próximas entrevistas a dor de execução pesar mais que a de documentação, o MoSCoW precisa ser revisto.
 
 ### O que mudou no produto
+
 | Descoberta | Mudança |
 |---|---|
-| E1: a IA precisa de visão do conjunto dos processos | Vínculos (US-05) e análise (US-06) seguem como Must; **busca (US-07) é a primeira candidata a subir** se houver folga |
+| Responsável indefinido em cada etapa (E2, E4, E5) | **US-05 confirmada como Must.** Novo item Should: destacar atividades **sem responsável** ("Quais processos estão sem responsável?") |
+| Falta de visão geral (E1, E4) | Busca (US-07) segue como a primeira candidata a subir de prioridade |
+| Trabalho manual relatado (E2, E3, E5) | US-06 confirmada; os exemplos reais viram critérios do eval |
+| Os 4 processos relatados | **Compras, reembolso, onboarding e suporte** viram casos do eval em `/evals/` e roteiros de teste do protótipo |
+| Demanda por acompanhamento de execução | Registrada como hipótese pós-MVP; não entra no MoSCoW agora |
 
 ### Citações
-> "Temos processos que precisamos mapear, e a IA precisa ter uma visão dos processos." *(E1, gerente de projetos de TI, paráfrase do POD a partir de conversa informal)*
+
+> "Temos processos que precisamos mapear, e a IA precisa ter uma visão dos processos." *(E1, gerente de projetos de TI, paráfrase)*
+
+> "Nem sempre é possível identificar quem está responsável por cada etapa." *(E2, analista administrativo)*
+
+> "Algumas tarefas acabam esquecidas ou atrasadas porque não existe uma visão geral do processo." *(E4, analista de recursos internos)*
 
 ### Próximos passos (checkpoint 03)
-- [ ] Retomar a conversa com o E1 usando o roteiro curto (tempo, ferramenta, teste da descrição)
-- [ ] Testar o protótipo com pelo menos 2 usuários reais, conforme a seção 4
-- [ ] Fazer mais entrevistas com analistas de processos e profissionais de RPA (meta: 5)
+- [ ] Testar o protótipo com pelo menos 2 dos entrevistados, usando os processos que eles mesmos relataram (valida P1 e P2)
+- [ ] Medir o tempo atual de mapeamento de um processo (calibra a meta do PRD)
+- [ ] Perguntar diretamente o peso da dor de execução × documentação
 
 ## 4. O protótipo Fundamenta como artefato de discovery
 
