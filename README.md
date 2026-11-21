@@ -1,6 +1,25 @@
-# Fundamenta
+<div align="center">
+
+<img src="docs/assets/brand/app-icon.svg" alt="Símbolo do Fundamenta" width="96" />
+
+<br /><br />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/fundamenta-claro.svg" />
+  <img src="docs/assets/brand/fundamenta-escuro.svg" alt="Fundamenta" width="280" />
+</picture>
+
+<br /><br />
 
 **Sua organização, potencializada por IA.**
+
+Gestão de processos (BPM) com IA · Bootcamp Software Engineering Project · MBA Faculdade Impacta
+
+`checkpoint-02` · Produto · [Discovery](docs/produto/discovery.md) · [PRD](docs/produto/prd.md) · [AI Canvas](docs/produto/ai-canvas.md) · [Histórias](docs/specs/historias-mvp.md)
+
+</div>
+
+---
 
 O Fundamenta é uma plataforma de **gestão de processos (BPM) com inteligência artificial**. A pessoa descreve um processo em texto livre e a IA gera o fluxo em BPMN 2.0. Depois, a pessoa revisa o fluxo, liga cada atividade a um responsável e a um sistema, e a IA aponta onde está o trabalho manual e o que vale automatizar.
 
