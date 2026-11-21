@@ -1,15 +1,16 @@
-# AGENTS.md: harness do agente *(v0)*
+# AGENTS.md: harness do agente *(v1)*
 
 > Instruções para qualquer agente de código que trabalhe neste repositório (Claude Code, Copilot, Cursor, Kiro...). O arquivo evolui a cada encontro com o que o POD aprender. Dono: **Tech Lead**.
 
 ## Contexto do produto
 
-ProcessIQ é uma plataforma de Process Intelligence + BPM + IA. Antes de propor qualquer coisa, leia:
+Fundamenta é uma plataforma de gestão de processos (BPM) com IA. Antes de propor qualquer coisa, leia:
 
 1. [docs/produto/prd.md](docs/produto/prd.md): escopo do MVP e requisitos
-2. [docs/produto/lean-canvas.md](docs/produto/lean-canvas.md): problema e proposta de valor
-3. [docs/specs/](docs/specs/): histórias e critérios de aceite
-4. [docs/adr/](docs/adr/): decisões já tomadas
+2. [docs/produto/moscow.md](docs/produto/moscow.md): o que é Must e o que está fora do MVP
+3. [docs/produto/lean-canvas.md](docs/produto/lean-canvas.md): problema e proposta de valor
+4. [docs/specs/](docs/specs/): histórias e critérios de aceite
+5. [docs/adr/](docs/adr/): decisões já tomadas
 
 ## Método: AI-DLC
 
@@ -33,6 +34,13 @@ Na fase de Inception, faça perguntas quando o contexto for insuficiente. Não i
 - **Dependências.** Não adicione bibliotecas sem justificar no PR.
 - **WIP.** No máximo 2 PRs abertos. Não gere trabalho novo enquanto houver PRs aguardando revisão.
 
+### Regras adicionadas no checkpoint 02
+- **Fonte antes de afirmar.** Só registre no diário ou nos documentos o que você leu de fato. Se uma fonte não carregou (página, PDF, atividade), escreva isso de forma explícita.
+- **Evidência de discovery é humana.** O agente prepara o roteiro e a estrutura, mas nunca preenche entrevistas, citações ou números de discovery.
+- **Confira o código real.** Antes de descrever a stack ou o produto, leia o repositório do front (`sistema-fundamenta-front`), não documentos antigos.
+- **Critério de erro obrigatório.** Toda história tem pelo menos um critério de caminho de erro ou borda, além do caminho feliz.
+- **Metas são hipóteses.** Metas numéricas sem dado de discovery ficam marcadas como hipótese.
+
 ## Limites (nunca faça)
 
 - Nunca comite segredos, chaves de API ou arquivos `.env`. Use variáveis de ambiente.
@@ -42,17 +50,22 @@ Na fase de Inception, faça perguntas quando o contexto for insuficiente. Não i
 
 ## Stack
 
-> **A definir.** A stack oficial será registrada em ADRs até o checkpoint 04. Candidatos em discussão:
+> O front-end já existe em [sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front). As escolhas abaixo ainda precisam ser oficializadas em ADRs (design system no checkpoint 03, demais até o checkpoint 04).
 
-| Camada | Candidato |
+| Camada | Escolha |
 |---|---|
-| Frontend | React + TypeScript, editor BPMN com `bpmn-js` |
-| Design system | shadcn/ui (ADR no checkpoint 03) |
+| Frontend | Next.js 16 (App Router) + React 19 + TypeScript |
+| Editor BPMN | `bpmn-js` |
+| Design system | MUI (Material UI) + Emotion, sem Tailwind *(ADR no checkpoint 03)* |
+| Estado e dados | Zustand (estado local) + TanStack Query + Axios (API) |
+| Formulários | Formik + Yup |
 | Backend | *a definir* |
 | Banco | *a definir* |
-| IA | LLM via API + validação do XML BPMN gerado |
+| IA | Google Gemini via API (`GEMINI_MODEL` com modelos de fallback) + validação do XML BPMN gerado |
 | Arquitetura | LikeC4 (C1/C2) em `/architecture/` |
 | CI/CD | GitHub Actions: testes + eval |
+
+**Atenção (Next.js 16):** a versão tem mudanças incompatíveis com versões anteriores. Antes de escrever código no front, consulte `node_modules/next/dist/docs/`.
 
 ## Estrutura de pastas
 

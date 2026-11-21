@@ -1,14 +1,17 @@
-# ProcessIQ *(nome provisório)*
+# Fundamenta
 
-> Plataforma de **Process Intelligence + BPM + IA** que transforma informações dispersas sobre processos em uma base inteligente e conectada: BPMN, pessoas, sistemas, documentos, riscos, indicadores e automações em um único ambiente.
+**Sua organização, potencializada por IA.**
+
+> Plataforma de **gestão de processos (BPM) com inteligência artificial**. O Fundamenta ajuda empresas a mapear, documentar, aprovar e consultar seus processos em um só lugar, com uma IA que cria o fluxo BPMN a partir de uma descrição em texto, aponta trabalho manual e gargalos e responde dúvidas dos colaboradores.
 
 Projeto do **Bootcamp · Software Engineering Project** do MBA em Engenharia de Software da Faculdade Impacta. O projeto é desenvolvido com o método **AI-DLC**: o agente escreve o código, e o POD especifica, revisa e responde por ele.
 
 | | |
 |---|---|
 | **URL do MVP** | *a definir (checkpoint 05)* |
-| **Checkpoint atual** | `checkpoint-01` · Times e desafio ✅ concluído |
+| **Checkpoint atual** | `checkpoint-02` · Produto 🟡 em andamento |
 | **Hipótese de valor** | [docs/produto/hipotese.md](docs/produto/hipotese.md) |
+| **Front-end (protótipo)** | [limberjhonathan/sistema-fundamenta-front](https://github.com/limberjhonathan/sistema-fundamenta-front) · Next.js 16 + MUI + bpmn-js, beta visual com dados de exemplo |
 
 ---
 
@@ -36,16 +39,35 @@ Empresas documentam seus processos de forma fragmentada, em documentos, planilha
 
 ## A solução
 
-- **Modelagem BPMN 2.0** com editor visual, modo simplificado, versionamento, comparação AS-IS × TO-BE, aprovação e publicação.
-- **IA para processos:** gera o BPMN a partir de linguagem natural, reuniões, entrevistas ou vídeos; aponta gargalos, redundâncias e tarefas manuais automatizáveis; explica o processo em linguagem simples e responde perguntas sobre ele.
-- **Base de conhecimento conectada:** Empresa → Área → Processo → Subprocesso → Atividade, ligada a pessoas, sistemas, documentos, riscos, KPIs e automações.
-- **Busca inteligente** sobre toda a base, por exemplo: *"Quais processos utilizam o Dynamics?"*
+Centralizar o ciclo de vida dos processos, da criação à consulta, e usar IA para acelerar o trabalho:
+
+- **Criar** processos descrevendo-os em linguagem natural: a IA estrutura o fluxo em BPMN 2.0, identificando papéis (RACI) e entradas/saídas (SIPOC).
+- **Modelar e revisar** os fluxos em um editor visual, com responsáveis, sistemas, documentação e sugestões de automação e de conformidade.
+- **Aprovar** mudanças em uma fila com prioridade e histórico.
+- **Consultar** tudo pelo portal de conhecimento, pela busca ou perguntando ao assistente, que cita as fontes.
+- **Acompanhar** indicadores de eficiência, conformidade e uso, com a IA apontando gargalos e processos desatualizados.
+
+### Para quem
+
+| Perfil | O que faz no Fundamenta |
+|---|---|
+| **Gestor / analista de processos** *(primeiro adepto)* | Mapeia processos com IA, acompanha KPIs, aprova alterações e identifica gargalos |
+| **Colaborador** | Encontra procedimentos, tira dúvidas com o assistente e cumpre suas atividades |
+| **Administrador** | Gerencia usuários, departamentos, permissões e o consumo de IA |
+
+### Visão do produto × recorte do MVP
+
+O protótipo do front já mostra a visão completa (dashboard, processos, Novo com IA, modelagem, aprovações, portal, assistente, busca e administração). O **MVP do bootcamp** entrega só o fluxo principal, priorizado no [MoSCoW](docs/produto/moscow.md):
+
+> **Descrever processo → IA gera BPMN → usuário revisa e ajusta → vincula responsáveis e sistemas → IA aponta trabalho manual e automações.**
+
+Aprovações, portal, assistente (chat), macroprocessos, permissões e cotas de IA ficam para depois do MVP.
 
 ### Onde a IA entra (e por que não é enfeite)
 
-Tire a IA e o produto vira mais um editor BPMN, que é exatamente a alternativa que já existe. A proposta de valor depende da IA para **transformar informação não estruturada em processo estruturado** e para **analisar os processos usando o contexto da organização**. A IA aparece **dentro do fluxo** (gera e sugere o diagrama no editor) e como **conversa** para perguntas abertas sobre a base de processos.
+Tire a IA e o Fundamenta vira mais um editor BPMN, que é exatamente a alternativa que já existe. A proposta de valor depende da IA para **transformar informação não estruturada em processo estruturado** e para **analisar os processos usando o contexto da organização**. A IA aparece **dentro do fluxo** (gera e sugere o diagrama no editor) e como **conversa** para perguntas abertas sobre a base de processos.
 
-A justificativa detalhada fica no [AI Canvas](docs/produto/ai-canvas.md), que é entregue no checkpoint 02.
+A justificativa detalhada fica no [AI Canvas](docs/produto/ai-canvas.md).
 
 ---
 
@@ -70,8 +92,11 @@ A justificativa detalhada fica no [AI Canvas](docs/produto/ai-canvas.md), que é
 
 - [Lean Canvas](docs/produto/lean-canvas.md)
 - [Hipótese de valor](docs/produto/hipotese.md)
-- [PRD](docs/produto/prd.md)
-- [AI Canvas](docs/produto/ai-canvas.md) *(checkpoint 02)*
+- [PRD v1](docs/produto/prd.md)
+- [AI Canvas](docs/produto/ai-canvas.md)
+- [MoSCoW do MVP](docs/produto/moscow.md)
+- [Evidências de discovery](docs/produto/discovery.md)
+- [Histórias e critérios de aceite](docs/specs/historias-mvp.md)
 
 ---
 
@@ -88,7 +113,7 @@ A justificativa detalhada fica no [AI Canvas](docs/produto/ai-canvas.md), que é
 | # | Encontro | Entrega mínima | Status |
 |---|---|---|---|
 | 01 | Times e desafio | POD e papéis no README, Lean Canvas, hipótese, esqueleto do PRD, AGENTS.md v0 | ✅ concluído |
-| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | ⚪ |
+| 02 | Produto | Evidências de discovery, AI Canvas, MoSCoW do MVP, histórias com critérios de aceite, PRD v1 | 🟡 |
 | 03 | Protótipo | Telas HTML testadas com 2 ou mais usuários, ADR do design system, diário #1 | ⚪ |
 | 04 | Design C1/C2 | C1 e C2 em LikeC4, ADRs, walking skeleton no ar com deploy e CI | ⚪ |
 | 05 | MVP | URL pública, fluxo principal ponta a ponta, testes e eval no CI, rastreabilidade, diário #2 | ⚪ |

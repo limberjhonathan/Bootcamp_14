@@ -1,6 +1,8 @@
-# PRD: ProcessIQ *(v0, esqueleto)*
+# PRD: Fundamenta *(v1)*
 
-> **Status:** v0, checkpoint 01. Os 6 pilares estão preenchidos de forma rasa. A v1, com histórias completas e critérios de aceite em `/docs/specs/`, sai no checkpoint 02.
+> **Status:** v1, checkpoint 02. Escopo do MVP priorizado no [MoSCoW](moscow.md); histórias e critérios de aceite completos em [/docs/specs/historias-mvp.md](../specs/historias-mvp.md); evidências em [discovery.md](discovery.md); estratégia de IA no [AI Canvas](ai-canvas.md).
+>
+> **Histórico:** v0 (checkpoint 01, esqueleto dos 6 pilares) → v1 (checkpoint 02, MoSCoW, histórias e critérios de aceite).
 >
 > O PRD é a entrada do agente: quanto mais específico, melhor o que ele constrói.
 
@@ -16,7 +18,7 @@ O MVP entrega **um fluxo principal completo**, e não uma fatia de cada módulo 
 
 > **Descrever processo → IA gera BPMN → usuário revisa e ajusta → vincula responsáveis e sistemas às atividades → IA analisa e aponta atividades manuais e oportunidades de automação.**
 
-Ficam **fora do MVP** (o MoSCoW oficial sai no checkpoint 02): vídeos e reuniões como entrada, riscos e controles, KPIs, AS-IS × TO-BE, aprovação e publicação, SSO, planos pagos e integrações.
+Ficam **fora do MVP** (ver *Won't have* no [MoSCoW](moscow.md)): vídeos e reuniões como entrada, riscos e controles, KPIs, AS-IS × TO-BE, aprovação e publicação, SSO, planos pagos e integrações.
 
 ## 2. Público-alvo
 
@@ -28,16 +30,19 @@ Ficam **fora do MVP** (o MoSCoW oficial sai no checkpoint 02): vídeos e reuniõ
 
 ## 3. Requisitos funcionais
 
-| ID | Requisito | Prioridade (prévia) |
-|---|---|---|
-| RF01 | Criar um processo a partir de uma descrição em linguagem natural, com a IA gerando um BPMN 2.0 | Must |
-| RF02 | Visualizar e editar o BPMN gerado em um editor visual | Must |
-| RF03 | Vincular responsável (pessoa/área) e sistema a cada atividade | Must |
-| RF04 | Pedir à IA uma análise do processo, com atividades manuais, gargalos e sugestões de automação | Must |
-| RF05 | Listar os processos cadastrados e buscar por processo, atividade ou sistema | Should |
-| RF06 | Exportar o processo em BPMN/XML | Should |
-| RF07 | Explicar o BPMN em linguagem simples | Could |
-| RF08 | Fazer perguntas em linguagem natural sobre a base de processos | Could |
+| ID | Requisito | Prioridade | Histórias |
+|---|---|---|---|
+| RF00 | Entrar com uma conta, com dados isolados por organização | Must | US-01 |
+| RF01 | Criar um processo a partir de uma descrição em linguagem natural, com a IA gerando um BPMN 2.0 | Must | US-02 |
+| RF02 | Visualizar, editar e salvar o BPMN gerado em um editor visual | Must | US-03 |
+| RF03 | Cadastrar pessoas/áreas e sistemas e vinculá-los a cada atividade, com sugestões da IA aprovadas pelo usuário | Must | US-04, US-05 |
+| RF04 | Pedir à IA uma análise do processo, com atividades manuais e sugestões de automação justificadas | Must | US-06 |
+| RF05 | Listar os processos cadastrados e buscar por processo, atividade ou sistema | Should | US-07 |
+| RF06 | Exportar o processo em BPMN/XML | Should | US-08 |
+| RF09 | Sinalizar conteúdo gerado por IA até ser revisado | Should | US-09 |
+| RF10 | Registrar o tempo para documentar um processo | Should | US-10 |
+| RF07 | Explicar o BPMN em linguagem simples | Could | — |
+| RF08 | Fazer perguntas em linguagem natural sobre a base de processos | Could | — |
 
 ## 4. Requisitos não funcionais
 
@@ -47,7 +52,7 @@ Ficam **fora do MVP** (o MoSCoW oficial sai no checkpoint 02): vídeos e reuniõ
 - **Usabilidade:** um usuário sem conhecimento de BPMN consegue gerar e ajustar um processo sem ajuda.
 - **Interoperabilidade:** o BPMN exportado abre no Camunda Modeler.
 
-## 5. Critérios de aceite *(exemplos; a lista completa fica em `/docs/specs/`)*
+## 5. Critérios de aceite *(resumo; a lista completa está em [historias-mvp.md](../specs/historias-mvp.md))*
 
 **RF01: gerar processo com IA**
 - **Dado** que estou logado e na tela de novo processo,
@@ -65,6 +70,8 @@ Ficam **fora do MVP** (o MoSCoW oficial sai no checkpoint 02): vídeos e reuniõ
   **então** recebo a lista dessas atividades, cada uma com pelo menos uma sugestão de automação.
 
 ## 6. Métricas de sucesso
+
+> As metas abaixo são **hipóteses** até serem calibradas com os dados de [discovery](discovery.md).
 
 | Métrica | Tipo | Meta inicial |
 |---|---|---|
