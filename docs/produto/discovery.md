@@ -4,7 +4,43 @@
 >
 > ⚠️ **Preencher com dados reais.** Tudo marcado com `[PREENCHER]` vem das entrevistas do POD. Não invente respostas: evidência fabricada invalida a hipótese.
 
-## Premissas testadas
+## Status do discovery
+
+| Etapa | Tipo de evidência | Status |
+|---|---|---|
+| 1. Proto-personas | Hipóteses do POD, a validar | ✅ Feito |
+| 2. Análise de concorrentes | Pesquisa secundária (desk research) | ✅ Feito |
+| 3. Entrevistas com usuários | Pesquisa primária | ⏳ Pendente |
+
+## 1. Proto-personas *(hipóteses, ainda não validadas)*
+
+> Proto-personas registram **o que o POD acredita** sobre os usuários antes das entrevistas. As entrevistas confirmam ou derrubam cada ponto.
+
+| | **Ana, analista de processos** *(primeira adepta)* | **Rafael, profissional de RPA** | **Marta, gestora de PME** |
+|---|---|---|---|
+| **Contexto** | Escritório de processos de uma empresa média ou grande; usa Bizagi ou Visio | Time de automação; recebe pedidos para "robotizar" processos | Dona ou gerente de operações; não tem equipe de BPM |
+| **Tarefa principal** | Levantar processos em entrevistas e desenhar o BPMN | Entender o processo antes de automatizar | Documentar "como se faz" para treinar a equipe |
+| **Dor que acreditamos existir** | Horas redesenhando diagramas a partir de anotações; documentação desatualizada logo depois | Ninguém sabe dizer quais atividades são manuais nem em que sistema acontecem | Não domina BPMN; os processos ficam na cabeça das pessoas |
+| **Ganho esperado com o Fundamenta** | Rascunho do BPMN em minutos para revisar | Lista de atividades manuais com sistema e responsável | Processo documentado sem aprender a notação |
+| **O que precisamos confirmar** | Tempo real gasto por processo (P3); se editaria o BPMN gerado (P2) | Se a análise de trabalho manual seria útil (P4) | Se consegue descrever o processo em texto (P1) |
+
+## 2. Análise de concorrentes *(pesquisa secundária)*
+
+> Comparação qualitativa feita pelo POD a partir da proposta pública de cada ferramenta. Não substitui a conversa com usuários.
+
+| Alternativa | O que faz bem | Lacuna que o Fundamenta explora |
+|---|---|---|
+| **Bizagi Modeler** | Modelagem BPMN completa e gratuita, muito usada em escritórios de processos | Exige domínio da notação; o desenho é manual |
+| **Camunda Modeler** | Padrão técnico de BPMN/DMN voltado à execução | Feito para desenvolvedores, não para quem só documenta |
+| **SAP Signavio** | Suíte corporativa de gestão e mineração de processos | Custo e complexidade altos para empresas médias e PMEs |
+| **Visio / Lucidchart / Draw.io / Miro** | Diagramas fáceis e conhecidos | Não entendem o processo: sem vínculo com pessoas e sistemas, sem análise |
+| **Planilhas e documentos** | Custo zero, todo mundo sabe usar | Fragmentados, desatualizados e impossíveis de consultar |
+
+**Leitura do POD:** as ferramentas se dividem entre *notação poderosa, mas difícil* (Bizagi, Camunda, Signavio) e *fácil, mas burra* (Visio, Miro, planilhas). O espaço do Fundamenta é **fácil de criar (descrever em texto) e inteligente depois (vínculos e análise com IA)**. As entrevistas precisam confirmar se essa lacuna dói o bastante para alguém trocar de ferramenta.
+
+## 3. Entrevistas com usuários
+
+### Premissas testadas
 
 | # | Premissa (da hipótese) | Como testar na entrevista | Sinal de validação |
 |---|---|---|---|
@@ -13,7 +49,7 @@
 | P3 | O mapeamento atual é lento e dói | Perguntar quanto tempo levou o último processo mapeado e com qual ferramenta | Relata horas/dias por processo e frustração |
 | P4 | Encontrar trabalho manual e oportunidades de automação é difícil hoje | Perguntar como identificam o que automatizar | Processo manual, baseado em entrevistas ou planilhas |
 
-## Roteiro de entrevista (30 min)
+### Roteiro de entrevista (30 min)
 
 **Abertura (2 min).** Explicar que é uma pesquisa, não uma venda. Pedir permissão para anotar. Não mostrar a solução antes do bloco 4.
 
@@ -40,7 +76,7 @@
 - Se isso existisse, o que faria você trocar a ferramenta atual? O que te impediria?
 - Conhece mais alguém que mapeia processos e toparia conversar?
 
-## Entrevistados
+### Entrevistados
 
 > Meta: **pelo menos 5 entrevistas**, priorizando os primeiros adeptos (analistas de processos e profissionais de RPA). Não usar nomes completos sem autorização; use iniciais.
 
@@ -52,9 +88,9 @@
 | E4 | | | | | |
 | E5 | | | | | |
 
-## Registro por entrevista
+### Registro por entrevista
 
-### E1: `[perfil]`
+#### E1: `[perfil]`
 
 - **Último processo mapeado:** `[PREENCHER]` · **tempo gasto:** `[PREENCHER]` · **ferramenta:** `[PREENCHER]`
 - **Maior dor (nas palavras dela/dele):** "`[PREENCHER]`"
