@@ -15,13 +15,24 @@
 
 Gestão de processos (BPM) com IA · Bootcamp Software Engineering Project · MBA Faculdade Impacta
 
-`checkpoint-02` · Produto · [Discovery](docs/produto/discovery.md) · [PRD](docs/produto/prd.md) · [AI Canvas](docs/produto/ai-canvas.md) · [Histórias](docs/specs/historias-mvp.md)
+<p>
+  <img alt="Checkpoint" src="https://img.shields.io/badge/checkpoint-02%20·%20Produto-56D9AE?style=for-the-badge&labelColor=14231F" />
+  <img alt="Método" src="https://img.shields.io/badge/método-AI--DLC-B8F36B?style=for-the-badge&labelColor=14231F" />
+</p>
+
+[Discovery](docs/produto/discovery.md) · [PRD](docs/produto/prd.md) · [AI Canvas](docs/produto/ai-canvas.md) · [MoSCoW](docs/produto/moscow.md) · [Histórias](docs/specs/historias-mvp.md)
 
 </div>
 
 ---
 
 O Fundamenta é uma plataforma de **gestão de processos (BPM) com inteligência artificial**. A pessoa descreve um processo em texto livre e a IA gera o fluxo em BPMN 2.0. Depois, a pessoa revisa o fluxo, liga cada atividade a um responsável e a um sistema, e a IA aponta onde está o trabalho manual e o que vale automatizar.
+
+<p align="center">
+  <img src="docs/assets/prototipo/02-modelagem.jpg" alt="Editor de modelagem do Fundamenta com um fluxo BPMN em raias, painel de propriedades e sugestões da IA" width="100%" />
+  <br />
+  <sub>Protótipo: editor de modelagem com o fluxo em BPMN, validação do diagrama e sugestões da IA</sub>
+</p>
 
 > Projeto do **Bootcamp · Software Engineering Project**, MBA em Engenharia de Software da Faculdade Impacta. Desenvolvido com o método **AI-DLC**: o agente escreve o código, e o POD especifica, revisa e responde por ele.
 
@@ -75,6 +86,22 @@ Conversamos com **5 profissionais** (gerente de projetos de TI e 4 funcionários
 
 O Fundamenta fica no espaço entre esses dois grupos: **fácil de criar** (basta descrever) e **inteligente depois** (a IA entende o processo e o contexto).
 
+```mermaid
+flowchart LR
+    A["📝 <b>Descrever</b><br/>texto livre + anexos"] --> B["✨ <b>Gerar</b><br/>IA cria o BPMN 2.0"]
+    B --> C["✏️ <b>Revisar</b><br/>editor visual"]
+    C --> D["🔗 <b>Conectar</b><br/>responsáveis e sistemas"]
+    D --> E["🔍 <b>Analisar</b><br/>IA aponta trabalho manual"]
+    D -. "IA sugere,<br/>humano aprova" .-> D
+
+    classDef ia fill:#56D9AE,stroke:#14231F,color:#14231F
+    classDef humano fill:#F3F7F4,stroke:#14231F,color:#14231F
+    class B,E ia
+    class A,C,D humano
+```
+
+<sub>🟢 Etapas executadas pela IA · ⚪ etapas conduzidas pela pessoa, que sempre revisa o que a IA gera</sub>
+
 | Etapa | O que acontece |
 |---|---|
 | **1. Descrever** | A pessoa conta como o processo funciona, em texto livre, e pode anexar materiais de apoio |
@@ -82,6 +109,15 @@ O Fundamenta fica no espaço entre esses dois grupos: **fácil de criar** (basta
 | **3. Revisar** | O fluxo abre no editor visual para ajustes; o que foi gerado pela IA fica sinalizado até ser revisado |
 | **4. Conectar** | Cada atividade recebe responsável e sistema; a IA sugere os vínculos e a pessoa aprova ou rejeita cada um |
 | **5. Analisar** | A IA aponta atividades manuais e sugere automações, sempre com justificativa |
+
+### O fluxo no protótipo
+
+| 1 · Descrever | 2 · Revisar e conectar |
+|---|---|
+| <img src="docs/assets/prototipo/01-novo-com-ia.jpg" alt="Tela Novo com IA com a descrição do processo de reembolso" /> | <img src="docs/assets/prototipo/02-modelagem.jpg" alt="Tela de modelagem com o fluxo gerado" /> |
+| A pessoa descreve o processo de reembolso em texto livre (caso real do discovery, E3) | O fluxo abre no editor, com raias por responsável, sistemas e atividades automatizáveis destacadas |
+
+<sub>Beta visual com dados de exemplo; a integração com a IA entra no MVP.</sub>
 
 ### Por que a IA não é enfeite
 
