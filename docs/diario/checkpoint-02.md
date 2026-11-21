@@ -70,3 +70,7 @@ Cada erro virou uma regra em [AGENTS.md › Regras adicionadas no checkpoint 02]
 - [ ] Decidir sobre RACI/SIPOC (erro #5)
 - [ ] Ler as instruções e os comentários da atividade "Checkpoint" no Classroom e conferir se pedem algo além do slide 72
 - [ ] PR revisado pelo Tech Lead, merge e tag `checkpoint-02`
+
+## Exceção ao processo
+
+- **Merge direto na `main`, sem PR revisado.** Decisão do PO, por causa do prazo de entrega. Contraria a regra "merge só por PR com revisão" do README e do AGENTS.md. O Tech Lead revisa o conteúdo depois do merge, e qualquer ajuste entra por PR.
